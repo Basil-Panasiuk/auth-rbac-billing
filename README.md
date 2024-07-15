@@ -20,3 +20,7 @@ $ docker-compose logs -f api
 
 Server available on localhost:3000.
 Swagger available by adding /swagger to baseurl => localhost:3000/swagger
+
+Pre-seeded default admin:
+admin@example.com
+'12345'
