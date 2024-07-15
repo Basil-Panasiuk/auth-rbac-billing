@@ -19,4 +19,4 @@ $ docker-compose logs -f api
 ```
 
 Server available on localhost:3000.
-Swagger available by adding /swagger at localhost:3000/swagger
+Swagger available by adding /swagger to baseurl => localhost:3000/swagger
