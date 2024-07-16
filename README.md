@@ -22,5 +22,5 @@ Server available on localhost:3000.
 Swagger API docs available by adding /swagger to baseurl => localhost:3000/swagger
 
 ### Pre-seeded default admin:
-email: admin@example.com
-password: sudoadmin
+ - email: admin@example.com
+ - password: sudoadmin

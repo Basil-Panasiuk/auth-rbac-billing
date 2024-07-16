@@ -25,6 +25,7 @@ import { ITokens } from '../interfaces/tokens.interface';
 import { TokenType } from './enums/token-type.enum';
 import { SameSite } from './enums/same-site.enum';
 import { AuthType } from './enums/auth-type.enum';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class AuthenticationService {
@@ -36,6 +37,7 @@ export class AuthenticationService {
     @Inject(jwtConfig.KEY)
     private readonly jwtConfiguration: ConfigType<typeof jwtConfig>,
     private readonly redisService: RedisService,
+    private readonly usersService: UsersService,
   ) {}
 
   async signUp(signUpDto: SignUpDto) {
@@ -77,7 +79,7 @@ export class AuthenticationService {
 
     return {
       tokens,
-      user,
+      user: this.usersService.toUserResponseDto(user),
     };
   }
 
@@ -105,7 +107,7 @@ export class AuthenticationService {
       if (err instanceof InvalidatedRefreshTokenError) {
         throw new UnauthorizedException({ message: 'Access denied' });
       }
-      throw new UnauthorizedException();
+      throw new UnauthorizedException({ message: 'Refresh token expired' });
     }
   }
 

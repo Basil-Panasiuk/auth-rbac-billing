@@ -28,7 +28,7 @@ export class AccessTokenGuard implements CanActivate {
 
     if (!token) {
       throw new UnauthorizedException({
-        message: 'Token not found.',
+        message: 'Access token not found',
       });
     }
 
@@ -41,7 +41,7 @@ export class AccessTokenGuard implements CanActivate {
       request[REQUEST_USER_KEY] = payload;
     } catch {
       throw new UnauthorizedException({
-        message: 'The token expired.',
+        message: 'Access token expired',
       });
     }
 

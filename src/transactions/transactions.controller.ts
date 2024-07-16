@@ -20,9 +20,10 @@ import { Roles } from 'src/iam/authorization/decorators/roles.decorator';
 import { Role } from 'src/users/enums/role.enum';
 import { ApproveTransferParamDto } from './dto/approve-transfer-param.dto';
 import { PaginationQueryDto } from 'src/common/dto/pagination-query.dto';
-import { ApiCookieAuth, ApiResponse } from '@nestjs/swagger';
+import { ApiCookieAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { PaginatedTransactionsResponseDto } from 'src/common/dto/paginated-transactions-response.dto';
 
+@ApiTags('transactions')
 @ApiCookieAuth()
 @Controller('transactions')
 export class TransactionsController {

@@ -13,6 +13,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from 'src/users/entities/user.entity';
 import { RedisModule } from 'src/redis/redis.module';
 import { RolesGuard } from './authorization/guards/roles.guard';
+import { UsersModule } from 'src/users/users.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { RolesGuard } from './authorization/guards/roles.guard';
     ConfigModule.forFeature(jwtConfig),
     TypeOrmModule.forFeature([User]),
     RedisModule,
+    UsersModule,
   ],
   controllers: [AuthenticationController],
   providers: [
