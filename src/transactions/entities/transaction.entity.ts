@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { TransactionType } from '../enums/transaction-type.enum';
 import { TransactionStatus } from '../enums/transaction-status.enum';
-import { User } from 'src/users/entities/user.entity';
+import { User } from '../../users/entities/user.entity';
 
 @Entity()
 export class Transaction {

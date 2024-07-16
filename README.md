@@ -10,11 +10,10 @@ $ docker-compose up -d
 
 ```
 
-then please wait until nestjs server initialized
-you can check logs of api container
+Then please wait until application startup and the database is pre-seeded with the default admin user.
+You can check logs of api container to see app's initialization
 
 ```bash
-# development
 $ docker-compose logs -f api
 
 ```

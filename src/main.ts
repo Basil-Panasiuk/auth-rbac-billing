@@ -3,13 +3,10 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import * as cookieParser from 'cookie-parser';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { SeederService } from './seeder.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
-  const userSeeder = app.get(SeederService);
-  await userSeeder.seed();
 
   const config = new DocumentBuilder()
     .addCookieAuth('accessToken')
