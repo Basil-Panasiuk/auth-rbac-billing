@@ -1,7 +1,7 @@
 ## To run locally
 
-Create .env file and copy everything from .env.example file
-Make sure to change value for WEBHOOK_URL varaible to get data for your acc
+Create .env file and copy everything from .env.example file.
+Make sure to change value for WEBHOOK_URL varaible to get transactions data in your acc
 
 ## Running the app
 
@@ -18,5 +18,9 @@ $ docker-compose logs -f api
 
 ```
 
-Server available on localhost:3000
-Swagger available by adding /swagger at localhost:3000/swagger
+Server available on localhost:3000.
+Swagger API docs available by adding /swagger to baseurl => localhost:3000/swagger
+
+### Pre-seeded default admin:
+email: admin@example.com
+password: sudoadmin
