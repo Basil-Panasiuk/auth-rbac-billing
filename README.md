@@ -3,7 +3,7 @@
 Create .env file and copy everything from .env.example file.
 Make sure to change value for WEBHOOK_URL varaible to get transactions data in your acc.
 
-- Without correct WEBHOOK_URL operations with transactions will be unavailable and server throw InternalServerErrorException('Failed to send to Webhook') error
+- Without correct WEBHOOK_URL operations with transactions will be unavailable and server throws InternalServerErrorException('Failed to send to Webhook') error
 
 ## Running the app
 Before running commands below pls check that entrypoint.sh file has line endings = LF. Otherwise change CRLF -> LF
