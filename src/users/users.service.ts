@@ -14,6 +14,7 @@ import { TransactionsService } from 'src/transactions/transactions.service';
 import { ActiveUserData } from 'src/iam/interfaces/active-user-data.interface';
 import { Role } from './enums/role.enum';
 import { TransactionStatus } from 'src/transactions/enums/transaction-status.enum';
+import { RedisService } from 'src/redis/redis.service';
 
 @Injectable()
 export class UsersService {
@@ -23,6 +24,7 @@ export class UsersService {
     @InjectRepository(Transaction)
     private readonly transactionsRepository: Repository<Transaction>,
     private readonly transactionsService: TransactionsService,
+    private readonly redisService: RedisService,
   ) {}
 
   async findOne(id: number) {
@@ -102,6 +104,7 @@ export class UsersService {
         user.isActive = false;
 
         await entityManager.save(user);
+        this.redisService.invalidateRefreshToken(user.id);
 
         const pendingTransactions = await this.transactionsRepository.find({
           where: [
