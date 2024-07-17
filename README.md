@@ -6,9 +6,10 @@ Make sure to change value for WEBHOOK_URL varaible to get transactions data in y
 - Without correct WEBHOOK_URL operations with transactions will be unavailable and server throw InternalServerErrorException('Failed to send to Webhook') error
 
 ## Running the app
-Before running command below pls check that entrypoint.sh file has line endings = LF. Otherwise change CRLF -> LF
+Before running commands below pls check that entrypoint.sh file has line endings = LF. Otherwise change CRLF -> LF
 
 ```bash
+$ npm ci
 $ docker-compose up -d
 
 ```
